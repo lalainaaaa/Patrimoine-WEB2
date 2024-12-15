@@ -1,0 +1,24 @@
+describe('Classe Bien', () => {
+    it('calculer correctement amortissement et la valeur finale', () => {
+      const ordinateur = new Bien('Ordinateur', 2000000, 0.1, 2.54794521);
+      const amortissementAttendu = 509589;
+      const valeurFinaleAttendue = 1490411;
+  
+      const amortissementCalcule = ordinateur.calculerAmortissement();
+      const valeurFinaleCalculee = ordinateur.calculerValeurFinale();
+  
+      expect(amortissementCalcule).toBeCloseTo(amortissementAttendu);
+      expect(valeurFinaleCalculee).toBeCloseTo(valeurFinaleAttendue);
+    });
+  
+    it('calculer la somme totale des valeurs finales correctement', () => {
+      const ordinateur = new Bien('Ordinateur', 2000000, 0.1, 2.54794521);
+      const vetement = new Bien('Vêtement', 1000000, 0.2, 0.36438356);
+      const biens = [ordinateur, vetement];
+  
+      const sommeTotaleAttendue = 2127123;
+      const sommeTotaleCalculee = calculerSommeTotale(biens);
+  
+      expect(sommeTotaleCalculee).toBeCloseTo(sommeTotaleAttendue);
+    });
+  });

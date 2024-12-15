@@ -1,0 +1,16 @@
+class Bien {
+    constructor(nom, valeurInitiale, tauxAmortissement, dureeUtilisation) {
+      this.nom = nom;
+      this.valeurInitiale = valeurInitiale;
+      this.tauxAmortissement = tauxAmortissement;
+      this.dureeUtilisation = dureeUtilisation;
+    }
+  
+    calculerAmortissement() {
+      return this.valeurInitiale * this.tauxAmortissement * this.dureeUtilisation;
+    }
+  
+    calculerValeurFinale() {
+      return this.valeurInitiale - this.calculerAmortissement();
+    }
+  }
